@@ -33,8 +33,13 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
+import { validationMixin } from 'vuelidate';
 
-@Component
+@Component({
+  mixins: [
+    validationMixin,
+  ],
+})
 export default class HelloWorld extends Vue {
   @Prop() private msg!: string;
 }
